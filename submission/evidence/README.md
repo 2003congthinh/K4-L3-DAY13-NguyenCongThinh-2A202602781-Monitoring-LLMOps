@@ -30,4 +30,3 @@ Từ report trong `submission/reports/`, dẫn ảnh bằng đường dẫn tư�
 ```
 
 Không commit secret, API key, PII thô hoặc evidence của nhóm/lớp khác.
-
