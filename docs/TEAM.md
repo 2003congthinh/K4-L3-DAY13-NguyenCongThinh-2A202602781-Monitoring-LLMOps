@@ -1,9 +1,9 @@
 # Thành viên và phân công nhóm
 
 - **Lớp:** K4-L3B
-- **Bài lab:** DAY13 AI Observability
+- **Bài lab:** DAY13 Monitoring & LLMOps
 - **Tên nhóm:** `[Điền tên nhóm]`
-- **Repository:** `K4-L3-DAY13-TenNhom-AIObservability`
+- **Repository:** `K4-L3-DAY13-TenNhom-Monitoring-LLMOps`
 - **Commit SHA nộp bài:** `[Điền SHA]`
 
 ## Thành viên

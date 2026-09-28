@@ -1,4 +1,4 @@
-# Rubric Day 13 AI Observability
+# Rubric Day 13 Monitoring & LLMOps
 
 Điểm bắt buộc là 100. Bonus tối đa 10 điểm; tổng điểm tối đa 110. Mọi điểm đều cần code chạy được và evidence có thể kiểm chứng.
 

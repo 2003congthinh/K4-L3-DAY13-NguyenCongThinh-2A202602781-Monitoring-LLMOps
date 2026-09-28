@@ -1,4 +1,4 @@
-# Checkpoints Day 13 AI Observability
+# Checkpoints Day 13 Monitoring & LLMOps
 
 Tổng thời lượng gợi ý là 120 phút, bám theo bản slide cập nhật. Mỗi checkpoint chỉ hoàn thành khi có sản phẩm, hiểu được nguyên lý và chạy được bước tự kiểm tra tương ứng.
 

@@ -1,4 +1,4 @@
-# Quy định Day 13 AI Observability
+# Quy định Day 13 Monitoring & LLMOps
 
 ## 1 Hình thức và deadline
 

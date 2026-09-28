@@ -1,4 +1,4 @@
-# Tài liệu Day 13 AI Observability
+# Tài liệu Day 13 Monitoring & LLMOps
 
 Thư mục này gom toàn bộ tài liệu hướng dẫn và quy định của bài lab. `README.md` ở root là điểm bắt đầu; `submission/REPORT.md` được giữ cạnh thư mục evidence vì là artifact phải nộp.
 

@@ -1,4 +1,4 @@
-service: day13-l3b-observability-lab
+service: day13-l3b-monitoring-llmops-lab
 primary_slo:
   name: fast_successful_requests
   window: 28d

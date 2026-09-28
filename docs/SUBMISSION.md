@@ -5,15 +5,15 @@
 Bài nhóm dùng cấu trúc:
 
 ```text
-K4-L3-DAY13-TenNhom-AIObservability
+K4-L3-DAY13-TenNhom-Monitoring-LLMOps
 ```
 
-Ví dụ: `K4-L3-DAY13-TraceMasters-AIObservability`.
+Ví dụ: `K4-L3-DAY13-TraceMasters-Monitoring-LLMOps`.
 
 Nếu Lab Coach chỉ định bài cá nhân, dùng:
 
 ```text
-K4-L3-DAY13-HoVaTen-MSSV-AIObservability
+K4-L3-DAY13-HoVaTen-MSSV-Monitoring-LLMOps
 ```
 
 Tên viết không dấu, không khoảng trắng và ngăn cách bằng dấu `-`.
@@ -27,7 +27,7 @@ Tên viết không dấu, không khoảng trắng và ngăn cách bằng dấu `
 ## 3 Cấu trúc bắt buộc
 
 ```text
-K4-L3-DAY13-TenNhom-AIObservability/
+K4-L3-DAY13-TenNhom-Monitoring-LLMOps/
 ├── app/                       # source đã hoàn thiện
 ├── config/                    # schema, dashboard, SLO, alert, challenge gốc
 ├── data/                      # input mẫu; không commit log chứa PII

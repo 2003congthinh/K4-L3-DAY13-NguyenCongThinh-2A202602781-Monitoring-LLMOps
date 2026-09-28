@@ -25,14 +25,14 @@ agent = LabAgent()
 async def lifespan(_: FastAPI):
     log.info(
         "app_started",
-        service=os.getenv("APP_NAME", "day13-observability-lab"),
+        service=os.getenv("APP_NAME", "day13-monitoring-llmops-lab"),
         env=os.getenv("APP_ENV", "dev"),
         payload={"tracing_enabled": tracing_enabled()},
     )
     yield
 
 
-app = FastAPI(title="Day 13 Observability Lab", lifespan=lifespan)
+app = FastAPI(title="Day 13 Monitoring & LLMOps Lab", lifespan=lifespan)
 app.add_middleware(CorrelationIdMiddleware)
 
 

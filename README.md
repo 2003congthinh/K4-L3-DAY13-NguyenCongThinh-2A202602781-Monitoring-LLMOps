@@ -1,4 +1,4 @@
-# K4-L3B — Lab Day 13: AI Observability
+# K4-L3B — Lab Day 13: Monitoring & LLMOps
 
 > **Loại repository:** đề bài/starter dành riêng cho lớp K4-L3B  
 > **Hình thức làm bài:** nhóm 3–5 học viên  
@@ -155,13 +155,13 @@ git log -1 --oneline
 
 ## Tên repo bài nộp
 
-Repo này là **repo đề bài**, nên tên chính thức là `K4-L3B-Day13-AI-Observability` (mẫu `K4-L3B-TenBai`). Repo bài nộp của nhóm dùng mẫu:
+Repo này là **repo đề bài**, nên tên chính thức là `K4-L3B-Day13-Monitoring-LLMOps` (mẫu `K4-L3B-TenBai`). Repo bài nộp của nhóm dùng mẫu:
 
 ```text
-K4-L3-DAY13-TenNhom-AIObservability
+K4-L3-DAY13-TenNhom-Monitoring-LLMOps
 ```
 
-Ví dụ: `K4-L3-DAY13-TraceMasters-AIObservability`. Mỗi thành viên nộp URL của repo nhóm và commit SHA cuối trên VLearn LMS/Codelabs. Xem đầy đủ tại [docs/SUBMISSION.md](docs/SUBMISSION.md).
+Ví dụ: `K4-L3-DAY13-TraceMasters-Monitoring-LLMOps`. Mỗi thành viên nộp URL của repo nhóm và commit SHA cuối trên VLearn LMS/Codelabs. Xem đầy đủ tại [docs/SUBMISSION.md](docs/SUBMISSION.md).
 
 ## Tài liệu trong repo
 

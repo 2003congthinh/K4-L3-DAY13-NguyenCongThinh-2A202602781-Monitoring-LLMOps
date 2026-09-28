@@ -1,6 +1,6 @@
 dashboard:
   schema_version: 1
-  title: K4-L3B Day 13 AI Observability
+  title: K4-L3B Day 13 Monitoring & LLMOps
   time_range_minutes: 60
   refresh_seconds: 30
   panels:

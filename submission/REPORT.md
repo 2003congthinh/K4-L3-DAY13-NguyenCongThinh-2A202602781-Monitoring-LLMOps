@@ -1,4 +1,4 @@
-# Báo cáo K4-L3B Day 13 AI Observability
+# Báo cáo K4-L3B Day 13 Monitoring & LLMOps
 
 ## 1. Thông tin nhóm
 
