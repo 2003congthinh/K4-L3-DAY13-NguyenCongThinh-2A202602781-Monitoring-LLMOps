@@ -20,4 +20,4 @@
 - Audit log tách riêng.
 - Custom metric hoặc automation do nhóm tự xây.
 
-Ảnh phải đặt trong `submission/evidence/` và được dẫn lại bằng đường dẫn tương đối trong `submission/REPORT.md`.
+Ảnh phải đặt trong `submission/evidence/` và được dẫn lại bằng đường dẫn tương đối trong `submission/reports/GROUP_REPORT.md` hoặc báo cáo cá nhân liên quan.

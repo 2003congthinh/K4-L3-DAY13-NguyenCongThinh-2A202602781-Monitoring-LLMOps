@@ -41,7 +41,10 @@ K4-L3-DAY13-TenNhom-Monitoring-LLMOps/
 ├── scripts/                   # load test, incident, validators
 ├── tests/                     # public tests và test bổ sung
 ├── submission/
-│   ├── REPORT.md
+│   ├── reports/
+│   │   ├── GROUP_REPORT.md
+│   │   ├── INDIVIDUAL_REPORT_TEMPLATE.md
+│   │   └── INDIVIDUAL_MSSV_HoVaTen.md  # một file cho mỗi thành viên
 │   └── evidence/
 ├── README.md
 ├── requirements.txt
@@ -58,9 +61,16 @@ K4-L3-DAY13-TenNhom-Monitoring-LLMOps/
 - Kết quả dashboard validator và ảnh dashboard đủ sáu nhóm chỉ số.
 - SLO, alert rules và runbook.
 - Điều tra challenge gồm challenge ID, metric, log/correlation ID, trace ID, root cause, fix và preventive measure.
-- `TEAM.md` và commit/PR của từng thành viên.
+- `TEAM.md`, báo cáo cá nhân và commit/PR của từng thành viên.
 
-## 5 Không được nộp
+## 5 Quy tắc báo cáo nhóm và cá nhân
+
+- Cả nhóm cùng hoàn thiện **một** file `submission/reports/GROUP_REPORT.md` cho kết quả chung, dashboard, SLO/alert và incident.
+- Mỗi thành viên sao chép `INDIVIDUAL_REPORT_TEMPLATE.md` thành `INDIVIDUAL_MSSV_HoVaTen.md` trong cùng thư mục `submission/reports/`.
+- Báo cáo cá nhân phải nêu phần trực tiếp thực hiện, commit/PR, evidence, quyết định kỹ thuật, blocker và bài học; nội dung phải khớp lịch sử Git.
+- Không sửa hoặc xóa file template để thành viên khác vẫn có thể sử dụng.
+
+## 6 Không được nộp
 
 - `.env`, secret, token, `.venv/`, cache hoặc dependency đã cài.
 - Log/screenshot chứa PII chưa che.
@@ -68,7 +78,7 @@ K4-L3-DAY13-TenNhom-Monitoring-LLMOps/
 - `config/challenge.json` đã bị tự ý sửa.
 - File lớn hoặc generated artifact không phục vụ việc chấm.
 
-## 6 Kiểm tra trước khi push
+## 7 Kiểm tra trước khi push
 
 ```powershell
 python -m pytest -q
@@ -78,4 +88,4 @@ git status --short
 git log -1 --oneline
 ```
 
-Sau khi push, kiểm tra repo clone được, link không yêu cầu quyền ngoài dự kiến, commit SHA tồn tại và mọi đường dẫn evidence trong `submission/REPORT.md` mở được.
+Sau khi push, kiểm tra repo clone được, commit SHA tồn tại, đủ một báo cáo nhóm và một báo cáo cho mỗi thành viên, và mọi đường dẫn evidence mở được.

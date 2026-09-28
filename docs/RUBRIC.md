@@ -18,7 +18,7 @@
 | Tiêu chí | Điểm | Bằng chứng bắt buộc | Chuẩn đạt tối đa |
 |---|---:|---|---|
 | Ownership kỹ thuật | 15 | commit/PR, file/hàm và artifact | Đóng góp thực, có thể tái hiện và giải thích |
-| Hiểu luồng end-to-end | 15 | Q&A và mục cá nhân trong TEAM/report | Giải thích được logging, tracing, metrics và incident |
+| Hiểu luồng end-to-end | 15 | Q&A và báo cáo cá nhân | Giải thích được logging, tracing, metrics và incident |
 | Báo cáo cá nhân | 10 | nhiệm vụ, quyết định, lỗi đã xử lý, điều học được | Nội dung khớp Git và evidence, không sao chép |
 
 ## Bonus tối đa 10 điểm
@@ -41,7 +41,7 @@ Tổng bonus không vượt 10 điểm.
 | Làm giả trace, screenshot, log hoặc commit history | 0 điểm toàn bài |
 | Repo không chạy được end-to-end | -15 điểm |
 | Hard-code output chỉ để vượt validator | -15 điểm |
-| Thiếu `TEAM.md`, `REPORT.md` hoặc evidence bắt buộc | -5 điểm mỗi hạng mục |
+| Thiếu `TEAM.md`, báo cáo nhóm, báo cáo cá nhân hoặc evidence bắt buộc | -5 điểm mỗi hạng mục |
 | Tên repo/nội dung nộp sai quy ước | Yêu cầu nộp lại; có thể trừ 5 điểm |
 | Nộp muộn hoặc sửa bài sau deadline | Áp dụng theo [RULES.md](RULES.md) |
 

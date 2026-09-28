@@ -107,7 +107,7 @@ Report dẫn được metric cụ thể, correlation ID/log line, trace ID, root
 
 ### Cần làm
 
-- Hoàn thiện `submission/REPORT.md` và `docs/TEAM.md`.
+- Hoàn thiện `submission/reports/GROUP_REPORT.md`, một báo cáo cho mỗi thành viên và `docs/TEAM.md`.
 - Đảm bảo mọi evidence được dẫn bằng đường dẫn tương đối.
 - Chạy lại tests và validators trên commit cuối.
 - Rà `.env`, secret, PII và file cache trước khi push.

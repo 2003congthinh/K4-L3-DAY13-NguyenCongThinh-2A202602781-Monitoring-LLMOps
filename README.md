@@ -27,8 +27,9 @@ Sau lab, nhóm có thể:
 ## Sản phẩm phải nộp
 
 - Source đã hoàn thiện các `TODO` bắt buộc.
-- `submission/REPORT.md` đã điền và evidence đặt trong `submission/evidence/`.
-- `docs/TEAM.md` ghi đúng thành viên, vai trò, commit/PR và phần học được.
+- `submission/reports/GROUP_REPORT.md` đã điền và evidence đặt trong `submission/evidence/`.
+- Mỗi thành viên có một file `submission/reports/INDIVIDUAL_MSSV_HoVaTen.md` được tạo từ mẫu cá nhân.
+- `docs/TEAM.md` ghi đúng thành viên, vai trò và liên kết đến báo cáo cá nhân.
 - Kết quả tests, log validator và dashboard validator trên commit cuối.
 - Ảnh dashboard có dữ liệu; ít nhất 10 trace IDs; một trace waterfall; prompt v1/v2 và evidence rollback.
 - Một SLO/error budget, ba alert symptom-based có `duration`, kênh Slack và runbook.
@@ -80,7 +81,7 @@ python scripts/validate_dashboard.py
 python -m pytest -q
 ```
 
-Baseline log chưa đạt là bình thường vì các `TODO` của CP1 chưa được làm. Ghi lại kết quả baseline vào report trước khi sửa.
+Baseline log chưa đạt là bình thường vì các `TODO` của CP1 chưa được làm. Ghi lại kết quả baseline vào báo cáo nhóm trước khi sửa.
 
 ## Lộ trình 120 phút
 
@@ -134,7 +135,7 @@ python scripts/load_test.py --challenge --concurrency 5
 1. Xem dashboard để xác định metric xấu và khoảng thời gian.
 2. Lọc `data/logs.jsonl`, lấy một `correlation_id` của request bất thường.
 3. Tìm trace có cùng `correlation_id`, rồi so sánh các span.
-4. Ghi root cause, fix action và preventive measure vào report.
+4. Ghi root cause, fix action và preventive measure vào báo cáo nhóm.
 
 Không sửa, thay thế hoặc lấy `config/challenge.json` từ lớp khác.
 
@@ -149,7 +150,7 @@ git log -1 --oneline
 ```
 
 - [ ] Không có `.env`, secret, `.venv/`, PII thô hoặc evidence của nhóm khác.
-- [ ] Mọi ảnh trong report dùng đường dẫn tương đối và mở được.
+- [ ] Báo cáo nhóm và báo cáo của từng thành viên đã đủ; mọi ảnh dùng đường dẫn tương đối và mở được.
 - [ ] Mỗi thành viên có đóng góp kỹ thuật kiểm chứng được.
 - [ ] Nhóm demo được luồng Metrics → Logs → Traces → Root cause.
 
@@ -171,3 +172,4 @@ Ví dụ: `K4-L3-DAY13-TraceMasters-Monitoring-LLMOps`. Mỗi thành viên nộp
 - [PROMPT_VERSIONING.md](docs/PROMPT_VERSIONING.md): prompt v1/v2, label và rollback.
 - [DASHBOARD_SETUP.md](docs/DASHBOARD_SETUP.md): mapping dữ liệu cho 6 panel.
 - [RUBRIC.md](docs/RUBRIC.md), [RULES.md](docs/RULES.md), [SUBMISSION.md](docs/SUBMISSION.md): cách chấm, quy định và cách nộp.
+- [GROUP_REPORT.md](submission/reports/GROUP_REPORT.md), [INDIVIDUAL_REPORT_TEMPLATE.md](submission/reports/INDIVIDUAL_REPORT_TEMPLATE.md): mẫu báo cáo nhóm và cá nhân.
