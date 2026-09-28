@@ -35,7 +35,7 @@ class FakeLLM:
         if STATE["cost_spike"]:
             output_tokens *= 4
         answer = (
-            "Starter answer. Teams should improve this output logic and add better quality checks. "
+            "Starter answer. You should improve this output logic and add better quality checks. "
             "Use retrieved context and keep responses concise."
         )
         return FakeResponse(

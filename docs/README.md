@@ -1,6 +1,6 @@
 # Tài liệu Day 13 Monitoring & LLMOps
 
-Thư mục này gom toàn bộ tài liệu hướng dẫn và quy định của bài lab. `README.md` ở root là điểm bắt đầu; các mẫu báo cáo nằm trong `submission/reports/`, cạnh thư mục evidence.
+Thư mục này gom toàn bộ tài liệu hướng dẫn và quy định của bài lab cá nhân. `README.md` ở root là điểm bắt đầu; báo cáo cần hoàn thiện nằm tại `submission/REPORT.md`.
 
 ## Tiến trình và quy định
 
@@ -9,7 +9,6 @@ Thư mục này gom toàn bộ tài liệu hướng dẫn và quy định của 
 - [RUBRIC.md](RUBRIC.md): tiêu chí, điểm và evidence.
 - [RULES.md](RULES.md): AI policy, bảo mật, challenge và deadline.
 - [SUBMISSION.md](SUBMISSION.md): tên repo, cấu trúc, danh sách evidence, báo cáo và checklist nộp bài.
-- [TEAM.md](TEAM.md): thông tin nhóm, phân công và liên kết báo cáo cá nhân.
 
 ## Hướng dẫn kỹ thuật
 

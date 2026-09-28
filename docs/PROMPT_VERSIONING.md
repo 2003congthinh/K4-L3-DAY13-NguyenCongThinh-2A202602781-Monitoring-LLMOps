@@ -37,4 +37,4 @@ Không chấm prompt nào “hay hơn”. Điểm nằm ở khả năng truy xu�
 - Một ảnh danh sách hai prompt version.
 - Hai trace ID chứng minh hai version/label khác nhau.
 - Một ảnh trước/sau khi đổi label hoặc rollback `production`.
-- Ghi các ID và đường dẫn ảnh vào `submission/reports/GROUP_REPORT.md`.
+- Ghi các ID và đường dẫn ảnh vào `submission/REPORT.md`.

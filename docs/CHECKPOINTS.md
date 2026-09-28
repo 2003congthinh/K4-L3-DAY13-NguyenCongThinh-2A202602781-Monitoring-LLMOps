@@ -10,7 +10,9 @@ Tổng thời lượng gợi ý là 120 phút, bám theo bản slide cập nhậ
 | CP1 | 0:15–0:40 | Logging và PII | Correlation ID, metadata, redaction | `validate_logs.py` ≥ 80/100 |
 | CP2 | 0:40–1:20 | Metrics, traces, prompt và dashboard | ≥10 traces, prompt v1/v2, 6 panel | dashboard `6/6 panel` |
 | CP3 | 1:20–1:45 | Challenge chính thức | Root cause có metric, log và trace | evidence khớp challenge ID |
-| CP4 | 1:45–2:00 | Báo cáo và demo | Report, TEAM, evidence, commit SHA | full test + secret scan |
+| CP4 | 1:45–2:00 | Báo cáo và demo | `REPORT.md`, evidence, commit SHA | full test + secret scan |
+
+Đây là bài cá nhân. Hãy cập nhật `submission/REPORT.md` và lưu evidence ngay sau mỗi checkpoint thay vì dồn toàn bộ sang CP4.
 
 ## CP0 Setup và baseline
 
@@ -34,7 +36,7 @@ python scripts/validate_dashboard.py
 python -m pytest -q
 ```
 
-API trả `ok: true`, log được tạo và nhóm ghi lại baseline thực tế.
+API trả `ok: true`, log được tạo và bạn ghi lại baseline thực tế.
 
 ## CP1 Logging và PII
 
@@ -107,7 +109,7 @@ Report dẫn được metric cụ thể, correlation ID/log line, trace ID, root
 
 ### Cần làm
 
-- Hoàn thiện `submission/reports/GROUP_REPORT.md`, một báo cáo cho mỗi thành viên và `docs/TEAM.md`.
+- Hoàn thiện báo cáo cá nhân duy nhất tại `submission/REPORT.md`.
 - Thu đủ evidence theo `docs/SUBMISSION.md`: tests/validators, logging/PII, traces, prompt rollback, dashboard và incident.
 - Đặt evidence trong `submission/evidence/` và dẫn bằng đường dẫn tương đối.
 - Chạy lại tests và validators trên commit cuối.
@@ -117,5 +119,5 @@ Report dẫn được metric cụ thể, correlation ID/log line, trace ID, root
 
 - Demo được luồng Metrics → Logs → Traces → Root cause.
 - Các ảnh/output đọc được, đúng commit nộp và không chứa secret/PII.
-- 100% thành viên có commit/PR khớp khai báo.
-- Mỗi thành viên đã nộp URL repo nhóm và commit SHA cuối trước deadline.
+- Bạn giải thích được các quyết định kỹ thuật và blocker trong báo cáo/Q&A.
+- URL repo cá nhân và commit SHA cuối đã được nộp trước deadline.

@@ -1,6 +1,6 @@
 # Khung thiết kế Observability
 
-Dùng khung này trước khi triển khai, sau đó chuyển kết quả cuối sang `submission/reports/GROUP_REPORT.md`.
+Dùng khung này trước khi triển khai, sau đó chuyển kết quả cuối sang `submission/REPORT.md`.
 
 ## Người dùng và luồng chính
 

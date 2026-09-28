@@ -7,7 +7,7 @@ primary_slo:
     total_event: 'event == "request_received"'
   target_percent: 99.5
   error_budget_percent: 0.5
-  note: Nhóm phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình.
+  note: Học viên phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình.
 guardrails:
   error_rate_pct_max: 2
   daily_cost_usd_max: 2.5

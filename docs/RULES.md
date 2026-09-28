@@ -2,8 +2,8 @@
 
 ## 1 Hình thức và deadline
 
-- Bài làm theo nhóm 3–5 thành viên trên một repository chung.
-- Mỗi cá nhân vẫn phải tự nộp cùng URL repo nhóm và commit SHA cuối trên VLearn LMS/Codelabs.
+- Đây là bài làm cá nhân; mỗi học viên dùng một repository riêng.
+- Mỗi học viên tự nộp URL repo cá nhân và commit SHA cuối trên VLearn LMS/Codelabs.
 - Deadline mặc định là 23:59:59 ngày diễn ra lab, múi giờ Asia/Ho_Chi_Minh.
 - Gia hạn chỉ có hiệu lực khi Lab Coach/Key Coach thông báo chính thức.
 - Nộp trễ 0–2 giờ: trừ 10%; trễ 2–12 giờ: trừ 25%; quá 12 giờ: 0 điểm, trừ trường hợp được phê duyệt trước deadline.
@@ -11,13 +11,13 @@
 
 ## 2 Sử dụng AI
 
-Được dùng AI coding assistant để giải thích thư viện, phân tích lỗi, gợi ý test hoặc review code. Nhóm phải hiểu và bảo vệ được mọi thay đổi đã commit. Không copy-paste mù quáng, không dùng AI để tạo evidence giả hoặc bịa số liệu.
+Được dùng AI coding assistant để giải thích thư viện, phân tích lỗi, gợi ý test hoặc review code. Học viên phải hiểu và bảo vệ được mọi thay đổi đã commit. Không copy-paste mù quáng, không dùng AI để tạo evidence giả hoặc bịa số liệu.
 
 ## 3 Hợp tác và liêm chính
 
-- Được thảo luận khái niệm với nhóm khác.
+- Được thảo luận khái niệm với học viên khác nhưng phải tự triển khai bài của mình.
 - Không sao chép source, report, dashboard, screenshot, trace ID hoặc evidence.
-- Mỗi thành viên khai đúng phần việc trong `TEAM.md` và report cá nhân; khai báo phải khớp lịch sử Git.
+- `submission/REPORT.md` phải do chính học viên viết và khớp source, evidence cùng lịch sử Git.
 - Không xóa log lỗi hoặc chỉnh ảnh để che kết quả không đạt.
 
 ## 4 Challenge chính thức

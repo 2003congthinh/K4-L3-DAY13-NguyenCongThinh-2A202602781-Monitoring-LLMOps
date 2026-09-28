@@ -1,4 +1,4 @@
-# Evidence của nhóm
+# Evidence cá nhân
 
 Đặt ảnh hoặc output text dùng để chấm vào thư mục này. Danh sách đầy đủ xem tại [docs/SUBMISSION.md](../../docs/SUBMISSION.md).
 
@@ -23,10 +23,10 @@ Tên file gợi ý:
 
 Có thể dùng `.txt` cho output của tests/validators. Có thể tách dashboard thành nhiều ảnh nếu một ảnh không đọc rõ.
 
-Từ report trong `submission/reports/`, dẫn ảnh bằng đường dẫn tương đối:
+Từ `submission/REPORT.md`, dẫn ảnh bằng đường dẫn tương đối:
 
 ```markdown
-![Trace waterfall](../evidence/07-trace-waterfall.png)
+![Trace waterfall](evidence/07-trace-waterfall.png)
 ```
 
-Không commit secret, API key, PII thô hoặc evidence của nhóm/lớp khác.
+Không commit secret, API key, PII thô hoặc evidence của học viên/lớp khác.

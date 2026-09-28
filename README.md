@@ -1,9 +1,9 @@
 # K4-L3B — Lab Day 13: Monitoring & LLMOps
 
-> **Loại repository:** đề bài/starter dành riêng cho lớp K4-L3B  
-> **Hình thức làm bài:** nhóm 3–5 học viên  
-> **Thời lượng trên lớp:** khoảng 120 phút  
-> **Deadline mặc định:** 23:59:59 trong ngày học, múi giờ Asia/Ho_Chi_Minh
+> - **Loại repository:** đề bài/starter dành riêng cho lớp K4-L3B
+> - **Hình thức làm bài:** cá nhân
+> - **Thời lượng trên lớp:** khoảng 120 phút
+> - **Deadline mặc định:** 23:59:59 trong ngày học, múi giờ Asia/Ho_Chi_Minh
 
 Bạn sẽ biến một AI API “hộp đen” thành hệ thống có thể trả lời ba câu hỏi: **hệ thống có vấn đề gì, request nào bị ảnh hưởng và bước nào là nguyên nhân**. Quy trình điều tra đúng theo slide là **Metrics → Logs → Traces**:
 
@@ -15,7 +15,7 @@ Repo dùng fake LLM nên không cần API key mô hình trả phí. Langfuse dù
 
 ## Kết quả cần đạt
 
-Sau lab, nhóm có thể:
+Sau lab, bạn có thể:
 
 - tạo structured log dạng JSON, truyền correlation ID và che PII trước khi ghi log;
 - đo latency P50/P95/P99, TTFT, traffic, error, token, cost, retrieval success và quality proxy;
@@ -27,9 +27,7 @@ Sau lab, nhóm có thể:
 ## Sản phẩm phải nộp
 
 - Source đã hoàn thiện các `TODO` bắt buộc.
-- `submission/reports/GROUP_REPORT.md` đã điền và evidence đặt trong `submission/evidence/`.
-- Mỗi thành viên có một file `submission/reports/INDIVIDUAL_MSSV_HoVaTen.md` được tạo từ mẫu cá nhân.
-- `docs/TEAM.md` ghi đúng thành viên, vai trò và liên kết đến báo cáo cá nhân.
+- `submission/REPORT.md` đã điền và evidence đặt trong `submission/evidence/`.
 - Kết quả tests, log validator và dashboard validator trên commit cuối.
 - Ảnh dashboard có dữ liệu; ít nhất 10 trace IDs; một trace waterfall; prompt v1/v2 và evidence rollback.
 - Một SLO/error budget, ba alert symptom-based có `duration`, kênh Slack và runbook.
@@ -81,7 +79,7 @@ python scripts/validate_dashboard.py
 python -m pytest -q
 ```
 
-Baseline log chưa đạt là bình thường vì các `TODO` của CP1 chưa được làm. Ghi lại kết quả baseline vào báo cáo nhóm trước khi sửa.
+Baseline log chưa đạt là bình thường vì các `TODO` của CP1 chưa được làm. Ghi lại kết quả baseline vào `submission/REPORT.md` trước khi sửa.
 
 ## Lộ trình 120 phút
 
@@ -108,7 +106,7 @@ Chi tiết từng checkpoint nằm trong [docs/CHECKPOINTS.md](docs/CHECKPOINTS.
 
 ### CP2 — Tracing, prompt và dashboard
 
-Starter dùng Langfuse Python SDK v4 và mới tạo root observation cho `LabAgent.run`. Nhóm cần thêm child observation cho:
+Starter dùng Langfuse Python SDK v4 và mới tạo root observation cho `LabAgent.run`. Bạn cần thêm child observation cho:
 
 - retrieval: loại `retriever` hoặc `span`;
 - LLM call: loại `generation`, có model, prompt, `input_tokens`, `output_tokens` và cost.
@@ -135,7 +133,7 @@ python scripts/load_test.py --challenge --concurrency 5
 1. Xem dashboard để xác định metric xấu và khoảng thời gian.
 2. Lọc `data/logs.jsonl`, lấy một `correlation_id` của request bất thường.
 3. Tìm trace có cùng `correlation_id`, rồi so sánh các span.
-4. Ghi root cause, fix action và preventive measure vào báo cáo nhóm.
+4. Ghi root cause, fix action và preventive measure vào `submission/REPORT.md`.
 
 Không sửa, thay thế hoặc lấy `config/challenge.json` từ lớp khác.
 
@@ -149,20 +147,21 @@ git status --short
 git log -1 --oneline
 ```
 
-- [ ] Không có `.env`, secret, `.venv/`, PII thô hoặc evidence của nhóm khác.
-- [ ] Báo cáo nhóm và báo cáo của từng thành viên đã đủ; mọi ảnh dùng đường dẫn tương đối và mở được.
-- [ ] Mỗi thành viên có đóng góp kỹ thuật kiểm chứng được.
-- [ ] Nhóm demo được luồng Metrics → Logs → Traces → Root cause.
+- [ ] Không có `.env`, secret, `.venv/`, PII thô hoặc evidence của học viên/lớp khác.
+- [ ] `submission/REPORT.md` đã đủ; mọi ảnh dùng đường dẫn tương đối và mở được.
+- [ ] Bạn demo và giải thích được luồng Metrics → Logs → Traces → Root cause.
 
 ## Tên repo bài nộp
 
-Repo này là **repo đề bài**, nên tên chính thức là `K4-L3B-Day13-Monitoring-LLMOps` (mẫu `K4-L3B-TenBai`). Repo bài nộp của nhóm dùng mẫu:
+Repo này là **repo đề bài**, nên tên chính thức là `K4-L3B-Day13-Monitoring-LLMOps` (mẫu `K4-L3B-TenBai`). Repo bài nộp cá nhân dùng mẫu:
 
 ```text
-K4-L3-DAY13-TenNhom-Monitoring-LLMOps
+K4-L3-DAY13-HoVaTen-MSSV-Monitoring-LLMOps
 ```
 
-Ví dụ: `K4-L3-DAY13-TraceMasters-Monitoring-LLMOps`. Mỗi thành viên nộp URL của repo nhóm và commit SHA cuối trên VLearn LMS/Codelabs. Xem đầy đủ tại [docs/SUBMISSION.md](docs/SUBMISSION.md).
+Ví dụ: `K4-L3-DAY13-NguyenVanAn-123456-Monitoring-LLMOps`. Mỗi học viên nộp URL repo cá nhân và commit SHA cuối trên VLearn LMS/Codelabs. Xem đầy đủ tại [docs/SUBMISSION.md](docs/SUBMISSION.md).
+
+Không push bài làm trực tiếp lên repo đề bài và không dùng chung repo bài nộp với học viên khác.
 
 ## Tài liệu trong repo
 
@@ -173,4 +172,4 @@ Ví dụ: `K4-L3-DAY13-TraceMasters-Monitoring-LLMOps`. Mỗi thành viên nộp
 - [DASHBOARD_SETUP.md](docs/DASHBOARD_SETUP.md): mapping dữ liệu cho 6 panel.
 - [RUBRIC.md](docs/RUBRIC.md), [RULES.md](docs/RULES.md), [SUBMISSION.md](docs/SUBMISSION.md): cách chấm, quy định và cách nộp.
 - [grading-evidence.md](docs/grading-evidence.md): checklist nhanh các ảnh/output cần thu thập.
-- [GROUP_REPORT.md](submission/reports/GROUP_REPORT.md), [INDIVIDUAL_REPORT_TEMPLATE.md](submission/reports/INDIVIDUAL_REPORT_TEMPLATE.md): mẫu báo cáo nhóm và cá nhân.
+- [REPORT.md](submission/REPORT.md): báo cáo cá nhân duy nhất cần hoàn thiện.

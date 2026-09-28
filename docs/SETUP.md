@@ -1,6 +1,6 @@
 # Chuẩn bị môi trường K4-L3B Day 13
 
-Các lệnh dưới đây chạy từ thư mục gốc của repository. Không dùng chung `.env` giữa nhóm hoặc giữa hai lớp.
+Các lệnh dưới đây chạy từ thư mục gốc của repository cá nhân. Không chia sẻ `.env` với học viên khác hoặc giữa hai lớp.
 
 ## Yêu cầu
 
@@ -47,7 +47,7 @@ Không commit `.env`. Nếu chưa có key, app vẫn chạy bằng prompt local;
 
 ## 3. Tùy chọn: chạy Langfuse local bằng Docker Compose
 
-Phần này không bắt buộc và không được cộng điểm riêng. Chỉ dùng khi nhóm không truy cập được project chung/cloud và máy có Docker Desktop đủ tài nguyên.
+Phần này không bắt buộc và không được cộng điểm riêng. Chỉ dùng khi bạn không truy cập được project chung/cloud và máy có Docker Desktop đủ tài nguyên.
 
 Ở một thư mục nằm ngoài repo bài nộp:
 

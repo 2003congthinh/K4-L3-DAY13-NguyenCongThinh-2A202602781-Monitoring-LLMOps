@@ -1,6 +1,6 @@
 # Evidence dùng để chấm bài
 
-Danh sách chính thức, quy tắc chụp và cách nộp nằm tại [SUBMISSION.md](SUBMISSION.md). File này là checklist nhanh khi nhóm thu thập evidence.
+Danh sách chính thức, quy tắc chụp và cách nộp nằm tại [SUBMISSION.md](SUBMISSION.md). File này là checklist nhanh khi bạn thu thập evidence cá nhân.
 
 ## Evidence runtime bắt buộc
 
@@ -20,11 +20,10 @@ Danh sách chính thức, quy tắc chụp và cách nộp nằm tại [SUBMISSI
 
 Không cần chụp toàn bộ code. Dẫn link tới:
 
-- `config/slo.yaml` và phần giải thích error budget trong group report;
+- `config/slo.yaml` và phần giải thích error budget trong `submission/REPORT.md`;
 - `config/alert_rules.yaml` và `docs/alerts.md`;
-- source, tests và commit/PR;
-- `docs/TEAM.md`;
-- group report và report cá nhân.
+- source, tests và commit history;
+- `submission/REPORT.md`.
 
 ## Chất lượng evidence
 
@@ -32,5 +31,5 @@ Không cần chụp toàn bộ code. Dẫn link tới:
 - Ảnh phải đọc được thông tin dùng để chấm, không phải ảnh trang trống.
 - Che secret và PII; không dùng dữ liệu thật.
 - Đặt file trong `submission/evidence/`.
-- Dẫn đường dẫn tương đối từ report, ví dụ `../evidence/07-trace-waterfall.png`.
+- Dẫn đường dẫn tương đối từ report, ví dụ `evidence/07-trace-waterfall.png`.
 - Metric, log và trace của incident phải cùng chỉ về một nguyên nhân.

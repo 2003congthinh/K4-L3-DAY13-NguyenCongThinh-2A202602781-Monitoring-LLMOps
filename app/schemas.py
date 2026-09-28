@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 
 class ChatRequest(BaseModel):
-    user_id: str = Field(..., examples=["u_team_01"])
+    user_id: str = Field(..., examples=["u_student_01"])
     session_id: str = Field(..., examples=["s_demo_01"])
     feature: str = Field(default="qa", examples=["qa", "summary"])
     message: str = Field(..., min_length=1)

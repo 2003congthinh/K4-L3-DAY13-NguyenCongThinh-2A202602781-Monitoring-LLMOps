@@ -1,8 +1,8 @@
 # Dựng và kiểm tra dashboard
 
-[`../config/dashboard.yaml`](../config/dashboard.yaml) là contract chấm điểm dùng chung, không phụ thuộc việc nhóm dựng dashboard trong Langfuse hay một công cụ local. File này quy định đúng nguồn dữ liệu, phép tổng hợp, đơn vị và threshold cho sáu panel.
+[`../config/dashboard.yaml`](../config/dashboard.yaml) là contract chấm điểm, không phụ thuộc việc bạn dựng dashboard trong Langfuse hay một công cụ local. File này quy định đúng nguồn dữ liệu, phép tổng hợp, đơn vị và threshold cho sáu panel.
 
-Trường `query` trong YAML là pseudocode mô tả phép tính, không phải câu lệnh để copy nguyên vào mọi công cụ. Nhóm chuyển cùng logic đó sang cú pháp của công cụ đã chọn.
+Trường `query` trong YAML là pseudocode mô tả phép tính, không phải câu lệnh để copy nguyên vào mọi công cụ. Bạn chuyển cùng logic đó sang cú pháp của công cụ đã chọn.
 
 ## Mapping dữ liệu
 
