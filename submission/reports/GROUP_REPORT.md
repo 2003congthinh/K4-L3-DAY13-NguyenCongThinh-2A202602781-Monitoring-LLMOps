@@ -15,6 +15,27 @@
 |---|---|---|---|
 | | | | `INDIVIDUAL_MSSV_HoVaTen.md` |
 
+### Evidence index
+
+Điền đường dẫn tương đối tới evidence thực tế của nhóm. Có thể dùng nhiều ảnh cho một mục nếu cần.
+
+| Evidence | Đường dẫn |
+|---|---|
+| Pytest cuối | `../evidence/01-pytest.png` |
+| Log validator | `../evidence/02-log-validator.png` |
+| Dashboard validator | `../evidence/03-dashboard-validator.png` |
+| Structured log | `../evidence/04-structured-log.png` |
+| PII redaction | `../evidence/05-pii-redaction.png` |
+| Trace list | `../evidence/06-trace-list.png` |
+| Trace waterfall | `../evidence/07-trace-waterfall.png` |
+| Trace metadata | `../evidence/08-trace-metadata.png` |
+| Prompt versions | `../evidence/09-prompt-versions.png` |
+| Prompt rollback | `../evidence/10-prompt-rollback.png` |
+| Dashboard runtime | `../evidence/11-dashboard-overview.png` |
+| Incident metric | `../evidence/12-incident-metric.png` |
+| Incident log | `../evidence/13-incident-log.png` |
+| Incident trace | `../evidence/14-incident-trace.png` |
+
 ## 2. Kết quả kỹ thuật
 
 | Nội dung | Baseline | Kết quả cuối | Evidence |

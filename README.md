@@ -172,4 +172,5 @@ Ví dụ: `K4-L3-DAY13-TraceMasters-Monitoring-LLMOps`. Mỗi thành viên nộp
 - [PROMPT_VERSIONING.md](docs/PROMPT_VERSIONING.md): prompt v1/v2, label và rollback.
 - [DASHBOARD_SETUP.md](docs/DASHBOARD_SETUP.md): mapping dữ liệu cho 6 panel.
 - [RUBRIC.md](docs/RUBRIC.md), [RULES.md](docs/RULES.md), [SUBMISSION.md](docs/SUBMISSION.md): cách chấm, quy định và cách nộp.
+- [grading-evidence.md](docs/grading-evidence.md): checklist nhanh các ảnh/output cần thu thập.
 - [GROUP_REPORT.md](submission/reports/GROUP_REPORT.md), [INDIVIDUAL_REPORT_TEMPLATE.md](submission/reports/INDIVIDUAL_REPORT_TEMPLATE.md): mẫu báo cáo nhóm và cá nhân.

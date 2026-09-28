@@ -108,12 +108,14 @@ Report dẫn được metric cụ thể, correlation ID/log line, trace ID, root
 ### Cần làm
 
 - Hoàn thiện `submission/reports/GROUP_REPORT.md`, một báo cáo cho mỗi thành viên và `docs/TEAM.md`.
-- Đảm bảo mọi evidence được dẫn bằng đường dẫn tương đối.
+- Thu đủ evidence theo `docs/SUBMISSION.md`: tests/validators, logging/PII, traces, prompt rollback, dashboard và incident.
+- Đặt evidence trong `submission/evidence/` và dẫn bằng đường dẫn tương đối.
 - Chạy lại tests và validators trên commit cuối.
 - Rà `.env`, secret, PII và file cache trước khi push.
 
 ### Hoàn thành khi
 
 - Demo được luồng Metrics → Logs → Traces → Root cause.
+- Các ảnh/output đọc được, đúng commit nộp và không chứa secret/PII.
 - 100% thành viên có commit/PR khớp khai báo.
 - Mỗi thành viên đã nộp URL repo nhóm và commit SHA cuối trước deadline.

@@ -17,7 +17,7 @@
 
 - Được thảo luận khái niệm với nhóm khác.
 - Không sao chép source, report, dashboard, screenshot, trace ID hoặc evidence.
-- Mỗi thành viên khai đúng phần việc trong `TEAM.md`; khai báo phải khớp lịch sử Git.
+- Mỗi thành viên khai đúng phần việc trong `TEAM.md` và report cá nhân; khai báo phải khớp lịch sử Git.
 - Không xóa log lỗi hoặc chỉnh ảnh để che kết quả không đạt.
 
 ## 4 Challenge chính thức

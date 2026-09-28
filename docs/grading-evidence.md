@@ -1,23 +1,36 @@
-# Danh sách evidence cần thu thập
+# Evidence dùng để chấm bài
 
-## Bắt buộc
+Danh sách chính thức, quy tắc chụp và cách nộp nằm tại [SUBMISSION.md](SUBMISSION.md). File này là checklist nhanh khi nhóm thu thập evidence.
 
-- Kết quả cuối của `validate_logs.py`.
-- Danh sách có tối thiểu 10 traces.
-- Một trace waterfall đầy đủ, có span retrieval và LLM tách riêng.
-- Hai prompt version và trace hiển thị đúng name/label/version.
-- Một bằng chứng đổi label hoặc rollback prompt.
-- Log JSON có correlation ID và metadata.
-- Log chứng minh PII đã được redact.
-- Kết quả `python scripts/validate_dashboard.py` hợp lệ.
-- Dashboard đủ 6 nhóm chỉ số.
-- Alert rules và runbook đã hoàn thiện.
-- Evidence điều tra challenge: metric, log line/correlation ID và trace ID liên quan.
+## Evidence runtime bắt buộc
 
-## Không bắt buộc
+- [ ] Kết quả cuối của `python -m pytest -q`.
+- [ ] `validate_logs.py` đạt tối thiểu 80/100.
+- [ ] `validate_dashboard.py` đạt 6/6.
+- [ ] Structured log có `correlation_id` và metadata.
+- [ ] PII giả đã được redact trong output thực tế.
+- [ ] Danh sách tối thiểu 10 traces.
+- [ ] Một trace waterfall có root, retrieval và generation.
+- [ ] Trace metadata có correlation ID, prompt version/label, token và cost.
+- [ ] Prompt v1/v2 và bằng chứng promote/rollback.
+- [ ] Dashboard runtime đủ 6 panel, time range, đơn vị và threshold.
+- [ ] Incident metric, incident log và incident trace nối được bằng cùng correlation ID/khoảng sự cố.
 
-- So sánh trước/sau khi tối ưu chi phí.
-- Audit log tách riêng.
-- Custom metric hoặc automation do nhóm tự xây.
+## Artifact kiểm tra trực tiếp trên repo
 
-Ảnh phải đặt trong `submission/evidence/` và được dẫn lại bằng đường dẫn tương đối trong `submission/reports/GROUP_REPORT.md` hoặc báo cáo cá nhân liên quan.
+Không cần chụp toàn bộ code. Dẫn link tới:
+
+- `config/slo.yaml` và phần giải thích error budget trong group report;
+- `config/alert_rules.yaml` và `docs/alerts.md`;
+- source, tests và commit/PR;
+- `docs/TEAM.md`;
+- group report và report cá nhân.
+
+## Chất lượng evidence
+
+- Evidence phải thuộc commit SHA được nộp và đúng challenge của lớp.
+- Ảnh phải đọc được thông tin dùng để chấm, không phải ảnh trang trống.
+- Che secret và PII; không dùng dữ liệu thật.
+- Đặt file trong `submission/evidence/`.
+- Dẫn đường dẫn tương đối từ report, ví dụ `../evidence/07-trace-waterfall.png`.
+- Metric, log và trace của incident phải cùng chỉ về một nguyên nhân.
