@@ -5,7 +5,7 @@ Thư mục này gom toàn bộ tài liệu hướng dẫn và quy định của 
 ## Tiến trình và quy định
 
 - [SETUP.md](SETUP.md): cài đặt, Langfuse và smoke test.
-- [CHECKPOINTS.md](CHECKPOINTS.md): timeline 120 phút và tín hiệu hoàn thành.
+- [CHECKPOINTS.md](CHECKPOINTS.md): timeline 14:00–18:00 (240 phút) và tín hiệu hoàn thành.
 - [RUBRIC.md](RUBRIC.md): tiêu chí, điểm và evidence.
 - [RULES.md](RULES.md): AI policy, bảo mật, challenge và deadline.
 - [SUBMISSION.md](SUBMISSION.md): tên repo, cấu trúc, danh sách evidence, báo cáo và checklist nộp bài.

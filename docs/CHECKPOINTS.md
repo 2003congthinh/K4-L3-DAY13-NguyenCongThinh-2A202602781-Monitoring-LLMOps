@@ -1,16 +1,16 @@
 # Checkpoints Day 13 Monitoring & LLMOps
 
-Tổng thời lượng gợi ý là 120 phút, bám theo bản slide cập nhật. Mỗi checkpoint chỉ hoàn thành khi có sản phẩm, hiểu được nguyên lý và chạy được bước tự kiểm tra tương ứng.
+Lab diễn ra từ 14:00 đến 18:00, tổng thời lượng 240 phút. Mỗi checkpoint chỉ hoàn thành khi có sản phẩm, hiểu được nguyên lý và chạy được bước tự kiểm tra tương ứng.
 
 ## Tổng quan thời gian
 
 | Mốc | Thời gian | Trọng tâm | Sản phẩm chính | Tự kiểm tra |
 |---|---:|---|---|---|
-| CP0 | 0:00–0:15 | Setup và baseline | API, `data/logs.jsonl`, baseline validators | `/health`, load test, pytest |
-| CP1 | 0:15–0:40 | Logging và PII | Correlation ID, metadata, redaction | `validate_logs.py` ≥ 80/100 |
-| CP2 | 0:40–1:20 | Metrics, traces, prompt và dashboard | ≥10 traces, prompt v1/v2, 6 panel | dashboard `6/6 panel` |
-| CP3 | 1:20–1:45 | Challenge chính thức | Root cause có metric, log và trace | evidence khớp challenge ID |
-| CP4 | 1:45–2:00 | Báo cáo và demo | `REPORT.md`, evidence, commit SHA | full test + secret scan |
+| CP0 | 14:00–14:30 (0:00–0:30) | Setup và baseline | API, `data/logs.jsonl`, baseline validators | `/health`, load test, pytest |
+| CP1 | 14:30–15:20 (0:30–1:20) | Logging và PII | Correlation ID, metadata, redaction | `validate_logs.py` ≥ 80/100 |
+| CP2 | 15:20–16:40 (1:20–2:40) | Metrics, traces, prompt và dashboard | ≥10 traces, prompt v1/v2, 6 panel | dashboard `6/6 panel` |
+| CP3 | 16:40–17:30 (2:40–3:30) | Challenge chính thức | Root cause có metric, log và trace | evidence khớp challenge ID |
+| CP4 | 17:30–18:00 (3:30–4:00) | Báo cáo và demo | `REPORT.md`, evidence, commit SHA | full test + secret scan |
 
 Đây là bài cá nhân. Hãy cập nhật `submission/REPORT.md` và lưu evidence ngay sau mỗi checkpoint thay vì dồn toàn bộ sang CP4.
 

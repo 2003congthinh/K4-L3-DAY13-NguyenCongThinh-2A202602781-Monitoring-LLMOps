@@ -2,7 +2,7 @@
 
 > - **Loại repository:** đề bài/starter dành riêng cho lớp K4-L3B
 > - **Hình thức làm bài:** cá nhân
-> - **Thời lượng trên lớp:** khoảng 120 phút
+> - **Thời gian trên lớp:** 14:00–18:00 (240 phút)
 > - **Deadline mặc định:** 23:59:59 trong ngày học, múi giờ Asia/Ho_Chi_Minh
 
 Bạn sẽ biến một AI API “hộp đen” thành hệ thống có thể trả lời ba câu hỏi: **hệ thống có vấn đề gì, request nào bị ảnh hưởng và bước nào là nguyên nhân**. Quy trình điều tra đúng theo slide là **Metrics → Logs → Traces**:
@@ -81,15 +81,15 @@ python -m pytest -q
 
 Baseline log chưa đạt là bình thường vì các `TODO` của CP1 chưa được làm. Ghi lại kết quả baseline vào `submission/REPORT.md` trước khi sửa.
 
-## Lộ trình 120 phút
+## Lộ trình 14:00–18:00 (240 phút)
 
 | Mốc | Thời gian | Việc chính | Hoàn thành khi |
 |---|---:|---|---|
-| CP0 | 0–15 phút | Setup, chạy API và baseline | `/health` trả `ok: true`, log được tạo |
-| CP1 | 15–40 phút | Correlation ID, structured log, PII | `validate_logs.py` đạt ít nhất 80/100 |
-| CP2 | 40–80 phút | Trace, prompt, dashboard, SLO/alert | có span tree; dashboard validator đạt 6/6 |
-| CP3 | 80–105 phút | Điều tra challenge K4-L3B | có metric, log và trace cùng một request |
-| CP4 | 105–120 phút | Report, evidence và kiểm tra cuối | tests/validators chạy xong trên commit nộp |
+| CP0 | 14:00–14:30 (0–30 phút) | Setup, chạy API và baseline | `/health` trả `ok: true`, log được tạo |
+| CP1 | 14:30–15:20 (30–80 phút) | Correlation ID, structured log, PII | `validate_logs.py` đạt ít nhất 80/100 |
+| CP2 | 15:20–16:40 (80–160 phút) | Trace, prompt, dashboard, SLO/alert | có span tree; dashboard validator đạt 6/6 |
+| CP3 | 16:40–17:30 (160–210 phút) | Điều tra challenge K4-L3B | có metric, log và trace cùng một request |
+| CP4 | 17:30–18:00 (210–240 phút) | Report, evidence và kiểm tra cuối | tests/validators chạy xong trên commit nộp |
 
 Chi tiết từng checkpoint nằm trong [docs/CHECKPOINTS.md](docs/CHECKPOINTS.md).
 
