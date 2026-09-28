@@ -1,0 +1,5 @@
+{
+  "scope": "practice-only",
+  "note": "Tình huống chính thức nằm trong config/challenge.json và chỉ được Lab Coach release khi bắt đầu challenge.",
+  "practice_scenarios": ["rag_slow", "tool_fail", "cost_spike"]
+}

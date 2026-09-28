@@ -1,0 +1,83 @@
+dashboard:
+  schema_version: 1
+  title: K4-L3B Day 13 AI Observability
+  time_range_minutes: 60
+  refresh_seconds: 30
+  panels:
+    - id: latency
+      title: Latency percentiles and TTFT
+      source: data/logs.jsonl
+      events: [response_sent]
+      fields: [latency_ms, ttft_ms]
+      aggregations: [p50, p95, p99, ttft_p95]
+      query: 'event == "response_sent" | percentile(latency_ms, [50, 95, 99]); percentile(ttft_ms, [95])'
+      unit: ms
+      threshold:
+        aggregation: p95
+        operator: lte
+        value: 3000
+
+    - id: traffic
+      title: Request traffic
+      source: data/logs.jsonl
+      events: [request_received]
+      fields: [event]
+      aggregations: [count, rate_per_minute]
+      query: 'event == "request_received" | count() by 1m'
+      unit: requests_per_minute
+      threshold:
+        aggregation: rate_per_minute
+        operator: gte
+        value: 1
+
+    - id: errors
+      title: Error rate and retrieval success
+      source: data/logs.jsonl
+      events: [request_received, request_failed]
+      fields: [error_type, tool_name, tool_success]
+      aggregations: [error_rate_pct, count_by_value, tool_success_rate_pct]
+      query: 'count(event == "request_failed") / count(event == "request_received") * 100; count_by(error_type); count(tool_success == true) / count(tool_success != null) * 100'
+      unit: percent
+      threshold:
+        aggregation: error_rate_pct
+        operator: lte
+        value: 2
+
+    - id: cost
+      title: Cost over time
+      source: data/logs.jsonl
+      events: [response_sent]
+      fields: [cost_usd]
+      aggregations: [sum_by_minute, total]
+      query: 'event == "response_sent" | sum(cost_usd) by 1m; sum(cost_usd)'
+      unit: usd
+      threshold:
+        aggregation: total
+        operator: lte
+        value: 2.5
+
+    - id: tokens
+      title: Input and output tokens
+      source: data/logs.jsonl
+      events: [response_sent]
+      fields: [tokens_in, tokens_out]
+      aggregations: [sum_by_field]
+      query: 'event == "response_sent" | sum(tokens_in), sum(tokens_out)'
+      unit: tokens
+      threshold:
+        aggregation: sum_by_field
+        operator: lte
+        value: 50000
+
+    - id: quality
+      title: Quality proxy
+      source: data/logs.jsonl
+      events: [response_sent]
+      fields: [quality_score]
+      aggregations: [mean]
+      query: 'event == "response_sent" | mean(quality_score)'
+      unit: score_0_to_1
+      threshold:
+        aggregation: mean
+        operator: gte
+        value: 0.75

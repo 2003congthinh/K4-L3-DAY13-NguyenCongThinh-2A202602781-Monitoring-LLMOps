@@ -1,0 +1,15 @@
+service: day13-l3b-observability-lab
+primary_slo:
+  name: fast_successful_requests
+  window: 28d
+  sli:
+    good_event: 'event == "response_sent" and latency_ms <= 3000'
+    total_event: 'event == "request_received"'
+  target_percent: 99.5
+  error_budget_percent: 0.5
+  note: Nhóm phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình.
+guardrails:
+  error_rate_pct_max: 2
+  daily_cost_usd_max: 2.5
+  quality_score_avg_min: 0.75
+  retrieval_success_rate_pct_min: 90

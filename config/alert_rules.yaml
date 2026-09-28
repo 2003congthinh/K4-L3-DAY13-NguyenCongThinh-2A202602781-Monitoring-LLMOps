@@ -1,0 +1,25 @@
+alerts:
+  - name: TODO_alert_1
+    severity: TODO
+    condition: TODO
+    duration: TODO
+    type: symptom-based
+    channel: slack
+    owner: TODO
+    runbook: docs/alerts.md#alert-1
+  - name: TODO_alert_2
+    severity: TODO
+    condition: TODO
+    duration: TODO
+    type: symptom-based
+    channel: slack
+    owner: TODO
+    runbook: docs/alerts.md#alert-2
+  - name: TODO_alert_3
+    severity: TODO
+    condition: TODO
+    duration: TODO
+    type: symptom-based
+    channel: slack
+    owner: TODO
+    runbook: docs/alerts.md#alert-3
