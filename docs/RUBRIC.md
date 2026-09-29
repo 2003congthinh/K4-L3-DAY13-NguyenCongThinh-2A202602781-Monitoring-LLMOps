@@ -26,12 +26,12 @@ Không đạt tối đa nếu chỉ hard-code output để vượt validator ho�
 
 | Thành phần | Điểm | Bằng chứng |
 |---|---:|---|
-| Có tối thiểu 10 traces do học viên tạo và nối được với log bằng `correlation_id` | 4 | `06-trace-list`, `08-trace-metadata` |
+| Có tối thiểu 10 traces do học viên tự tạo trong project Langfuse cá nhân và nối được với log bằng `correlation_id` | 4 | `06-trace-list`, `08-trace-metadata` |
 | Trace có root, retrieval và generation đúng quan hệ cha-con; có model, token và cost | 4 | `07-trace-waterfall` |
 | Có prompt v1/v2 và trace gắn đúng name/version/label | 4 | `09-prompt-versions` và trace IDs trong report |
 | Chứng minh promote/rollback label `production` | 3 | `10-prompt-rollback` |
 
-Trace không có child observation hoặc chứa PII thô không đạt điểm tối đa.
+Trace không có child observation, chứa PII thô hoặc lấy từ project dùng chung/người khác không được tính.
 
 ## D. Dashboard, SLO và alerts — 15 điểm
 

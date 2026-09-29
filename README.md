@@ -11,7 +11,7 @@ Bạn sẽ biến một AI API “hộp đen” thành hệ thống có thể tr
 2. Logs giúp tìm request cụ thể qua `correlation_id`.
 3. Trace của request đó cho biết span nào chậm hoặc lỗi.
 
-Repo dùng fake LLM nên không cần API key mô hình trả phí. Langfuse dùng để quan sát trace và quản lý prompt version.
+Repo dùng fake LLM nên không cần API key mô hình trả phí. Mỗi học viên tự tạo một project Langfuse riêng để quan sát trace và quản lý prompt version; không dùng project/key dùng chung.
 
 ## Kết quả cần đạt
 
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Điền project Langfuse do Lab Coach cung cấp vào `.env`:
+Tự đăng ký/đăng nhập [Langfuse Cloud](https://cloud.langfuse.com), tạo project riêng tên `day13-k4-l3b-<MSSV>`, rồi vào **Project Settings → API Keys** để tạo key pair. Điền key của chính project đó vào `.env`:
 
 ```dotenv
 LANGFUSE_PUBLIC_KEY=pk-lf-...
@@ -63,6 +63,10 @@ LANGFUSE_BASE_URL=https://cloud.langfuse.com
 LANGFUSE_PROMPT_NAME=day13-chat
 LANGFUSE_PROMPT_LABEL=production
 ```
+
+Không chia sẻ key và không chụp màn hình trang hiển thị secret. Xem các bước chi tiết tại [docs/SETUP.md](docs/SETUP.md).
+
+> **Phân biệt evidence:** structured logs nằm ở terminal/`data/logs.jsonl`; Langfuse hiển thị traces/observations và prompt versions. Học viên phải tự chạy workload, tự tạo cả log lẫn trace rồi chụp evidence của mình.
 
 Chạy API ở terminal thứ nhất:
 

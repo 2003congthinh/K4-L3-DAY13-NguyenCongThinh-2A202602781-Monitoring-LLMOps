@@ -4,7 +4,7 @@ Mục tiêu của phần này là biết một request đã dùng prompt nào v�
 
 ## Prompt contract
 
-Tạo text prompt tên `day13-chat` trên Langfuse. Prompt phải giữ ba biến:
+Trong project Langfuse cá nhân `day13-k4-l3b-<MSSV>`, tạo text prompt tên `day13-chat`. Prompt phải giữ ba biến:
 
 ```text
 Feature={{feature}}

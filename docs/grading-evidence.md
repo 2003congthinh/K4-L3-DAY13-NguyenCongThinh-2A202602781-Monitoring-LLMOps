@@ -9,7 +9,7 @@ Danh sách chính thức, quy tắc chụp và cách nộp nằm tại [SUBMISSI
 - [ ] `validate_dashboard.py` đạt 6/6.
 - [ ] Structured log có `correlation_id` và metadata.
 - [ ] PII giả đã được redact trong output thực tế.
-- [ ] Danh sách tối thiểu 10 traces.
+- [ ] Tên project Langfuse cá nhân và danh sách tối thiểu 10 traces do học viên tự tạo.
 - [ ] Một trace waterfall có root, retrieval và generation.
 - [ ] Trace metadata có correlation ID, prompt version/label, token và cost.
 - [ ] Prompt v1/v2 và bằng chứng promote/rollback.
@@ -30,6 +30,7 @@ Không cần chụp toàn bộ code. Dẫn link tới:
 - Evidence phải thuộc commit SHA được nộp và đúng challenge của lớp.
 - Ảnh phải đọc được thông tin dùng để chấm, không phải ảnh trang trống.
 - Che secret và PII; không dùng dữ liệu thật.
+- Trace/prompt phải thuộc project cá nhân `day13-k4-l3b-<MSSV>`; không chụp trang API Keys.
 - Đặt file trong `submission/evidence/`.
 - Dẫn đường dẫn tương đối từ report, ví dụ `evidence/07-trace-waterfall.png`.
 - Metric, log và trace của incident phải cùng chỉ về một nguyên nhân.

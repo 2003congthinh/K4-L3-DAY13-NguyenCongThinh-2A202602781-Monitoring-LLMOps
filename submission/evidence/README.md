@@ -23,6 +23,8 @@ Tên file gợi ý:
 
 Có thể dùng `.txt` cho output của tests/validators. Có thể tách dashboard thành nhiều ảnh nếu một ảnh không đọc rõ.
 
+Ảnh `04`, `05`, `13` lấy từ terminal hoặc `data/logs.jsonl`. Ảnh `06`–`10`, `14` lấy từ project Langfuse cá nhân `day13-k4-l3b-<MSSV>` và nên nhìn thấy tên project. Không mở/chụp trang API Keys.
+
 Từ `submission/REPORT.md`, dẫn ảnh bằng đường dẫn tương đối:
 
 ```markdown

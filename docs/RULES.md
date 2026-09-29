@@ -17,6 +17,7 @@
 
 - Được thảo luận khái niệm với học viên khác nhưng phải tự triển khai bài của mình.
 - Không sao chép source, report, dashboard, screenshot, trace ID hoặc evidence.
+- Mỗi học viên phải tự tạo project Langfuse và tự sinh trace/prompt evidence; không dùng project hoặc API key dùng chung.
 - `submission/REPORT.md` phải do chính học viên viết và khớp source, evidence cùng lịch sử Git.
 - Không xóa log lỗi hoặc chỉnh ảnh để che kết quả không đạt.
 
@@ -33,6 +34,7 @@
 - Không ghi PII nguyên văn vào source, log, screenshot hoặc report.
 - Dùng dữ liệu thử nghiệm do repo cung cấp; không nhập PII thật.
 - Nếu phát hiện key đã commit, phải revoke/rotate ngay và báo cho Lab Coach.
+- Screenshot Langfuse được phép hiển thị tên project cá nhân nhưng không được hiển thị public/secret key.
 
 ## 6 Evidence trung thực
 

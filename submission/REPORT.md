@@ -10,6 +10,7 @@
 - **Repository URL:**
 - **Commit SHA cuối:**
 - **Challenge ID:**
+- **Tên project Langfuse cá nhân:** `day13-k4-l3b-<MSSV>`
 
 ## 2. Evidence index
 
@@ -53,6 +54,7 @@
 
 ## 5. Tracing và prompt versioning
 
+- **Cách xác nhận traces do chính tôi tạo trong project cá nhân:**
 - **Cấu trúc root/retrieval/generation observations:**
 - **Cách nối trace với log:**
 - **Prompt name:**
@@ -94,6 +96,7 @@
 - [ ] Kết quả và evidence thuộc commit SHA cuối.
 - [ ] Tất cả ảnh/output mở được bằng đường dẫn tương đối.
 - [ ] Incident evidence nối đúng metric → log → trace.
+- [ ] Trace/prompt evidence thuộc project Langfuse cá nhân và ảnh không lộ key/secret.
 - [ ] Repository chạy lại được theo README.
 - [ ] Không có secret, API key, PII thô hoặc evidence của người khác/lớp khác.
 - [ ] URL repo và commit SHA cuối đã được nộp trên LMS/Codelabs.

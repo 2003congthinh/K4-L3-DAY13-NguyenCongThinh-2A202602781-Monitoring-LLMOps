@@ -6,7 +6,7 @@ Các lệnh dưới đây chạy từ thư mục gốc của repository cá nhâ
 
 - Python 3.11 trở lên.
 - Git.
-- Tài khoản hoặc project Langfuse do Lab Coach cung cấp.
+- Một tài khoản Langfuse Cloud do chính học viên đăng ký.
 - Docker Desktop chỉ cần khi tự chọn chạy Langfuse local.
 
 ## 1. Tạo virtual environment
@@ -31,23 +31,32 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-## 2. Cấu hình Langfuse — mặc định dùng chung/cloud
+## 2. Tự tạo project Langfuse Cloud
 
-Ưu tiên project dùng chung do Lab Coach cung cấp hoặc Langfuse Cloud. Điền host và key của project vào `.env`:
+Mỗi học viên dùng **project riêng**, không dùng chung project hoặc API key với bạn khác:
+
+1. Mở [Langfuse Cloud](https://cloud.langfuse.com) và tự đăng ký/đăng nhập.
+2. Tạo project tên `day13-k4-l3b-<MSSV>`, ví dụ `day13-k4-l3b-123456`.
+3. Trong project, mở **Project Settings → API Keys** và tạo một key pair.
+4. Copy public key và secret key vào `.env` của repo cá nhân:
 
 ```dotenv
-LANGFUSE_PUBLIC_KEY=
-LANGFUSE_SECRET_KEY=
+LANGFUSE_PUBLIC_KEY=pk-lf-...
+LANGFUSE_SECRET_KEY=sk-lf-...
 LANGFUSE_BASE_URL=https://cloud.langfuse.com
 LANGFUSE_PROMPT_NAME=day13-chat
 LANGFUSE_PROMPT_LABEL=production
 ```
 
-Không commit `.env`. Nếu chưa có key, app vẫn chạy bằng prompt local; bạn vẫn làm được log, metrics và public tests nhưng chưa có evidence trace/prompt version.
+5. Lưu `.env`, khởi động lại API, chạy `python scripts/load_test.py`, rồi mở đúng project để kiểm tra trace mới.
+
+Không commit/chia sẻ `.env`, không gửi key cho bạn khác và không để key xuất hiện trong screenshot. Nếu chưa cấu hình key, app vẫn chạy bằng prompt local nhưng phần trace/prompt evidence chưa hoàn thành. Cấu hình môi trường này theo [tài liệu SDK chính thức của Langfuse](https://langfuse.com/docs/observability/sdk/overview).
+
+> `data/logs.jsonl` là **structured log của ứng dụng**. Langfuse là nơi xem **traces/observations và prompt versions**. Hai nguồn này được nối bằng `correlation_id`; Langfuse không thay thế file log trong lab này.
 
 ## 3. Tùy chọn: chạy Langfuse local bằng Docker Compose
 
-Phần này không bắt buộc và không được cộng điểm riêng. Chỉ dùng khi bạn không truy cập được project chung/cloud và máy có Docker Desktop đủ tài nguyên.
+Phần này không bắt buộc và không được cộng điểm riêng. Chỉ dùng khi bạn không thể dùng Langfuse Cloud và máy có Docker Desktop đủ tài nguyên. Dù chạy local, mỗi học viên vẫn phải tự tạo project và tự sinh trace của mình.
 
 Ở một thư mục nằm ngoài repo bài nộp:
 
@@ -98,7 +107,7 @@ API mặc định chạy tại `http://127.0.0.1:8000`; health check ở `/healt
 - `ModuleNotFoundError`: kiểm tra virtual environment đã được activate và chạy lại `pip install -r requirements.txt`.
 - `ModuleNotFoundError: No module named 'app'` hoặc `'scripts'` khi chạy test: dùng `python -m pytest -q` từ thư mục gốc thay vì gọi `pytest` trực tiếp.
 - Không có `data/logs.jsonl`: bảo đảm API đang chạy trước khi chạy load test.
-- Không thấy trace: kiểm tra ba biến `LANGFUSE_*`, sau đó khởi động lại API.
+- Không thấy trace: xác nhận key thuộc đúng project cá nhân, kiểm tra ba biến `LANGFUSE_*`, khởi động lại API rồi chạy lại load test; đợi vài giây và chọn time range gần nhất trên Langfuse.
 - Trace ghi `prompt_source=local-fallback`: kiểm tra host/key và prompt name/label trong `.env`.
-- Docker local không lên: chạy `docker compose ps`, kiểm tra Docker Desktop và tài nguyên máy; có thể quay về project chung/cloud.
+- Docker local không lên: chạy `docker compose ps`, kiểm tra Docker Desktop và tài nguyên máy; ưu tiên quay về project cá nhân trên Langfuse Cloud.
 - Challenge chưa chạy: chờ Lab Coach release `config/challenge.json`.

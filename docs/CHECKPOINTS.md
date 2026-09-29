@@ -19,12 +19,13 @@ Lab diễn ra từ 14:00 đến 18:00, tổng thời lượng 240 phút. Mỗi c
 ### Cần làm
 
 - Làm theo [SETUP.md](SETUP.md).
+- Tự tạo project Langfuse Cloud tên `day13-k4-l3b-<MSSV>` và cấu hình key của chính bạn trong `.env`.
 - Chạy API, load test và các public tests.
 - Lưu kết quả baseline của `validate_logs.py` và `validate_dashboard.py`.
 
 ### Cần hiểu
 
-- Langfuse quản lý trace/prompt; `data/logs.jsonl` là nguồn dashboard.
+- Langfuse quản lý trace/prompt; `data/logs.jsonl` là structured log và nguồn dashboard. Hai nguồn khác nhau nhưng cùng có `correlation_id`.
 - Baseline chưa đạt validator là bình thường vì repo chứa TODO dành cho học viên.
 
 ### Hoàn thành khi
@@ -36,7 +37,7 @@ python scripts/validate_dashboard.py
 python -m pytest -q
 ```
 
-API trả `ok: true`, log được tạo và bạn ghi lại baseline thực tế.
+API trả `ok: true`, log được tạo, trace xuất hiện trong đúng project Langfuse cá nhân và bạn ghi lại baseline thực tế.
 
 ## CP1 Logging và PII
 
@@ -62,7 +63,7 @@ API trả `ok: true`, log được tạo và bạn ghi lại baseline thực t�
 
 ### Cần làm
 
-- Tạo tối thiểu 10 traces với metadata.
+- Tự chạy workload để tạo tối thiểu 10 traces trong project Langfuse cá nhân; không dùng trace ID của người khác.
 - Dùng API observation của Langfuse Python SDK v4 để tách child observation cho retrieval và LLM; starter mới chỉ có root observation cho `LabAgent.run`.
 - Làm theo [PROMPT_VERSIONING.md](PROMPT_VERSIONING.md) để tạo prompt v1/v2.
 - Chạy cùng input với hai label và thực hiện một lần đổi label hoặc rollback.

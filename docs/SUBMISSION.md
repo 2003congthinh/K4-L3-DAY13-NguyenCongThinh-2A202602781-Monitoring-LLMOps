@@ -61,6 +61,13 @@ Evidence phải chứng minh kết quả chạy trên đúng commit SHA được
 - Source, YAML, runbook và commit được dẫn bằng đường dẫn/link; không cần chụp toàn bộ code.
 - Mọi đường dẫn trong report phải là đường dẫn tương đối và mở được trên GitHub.
 - Không dùng source, report, trace ID hoặc evidence của học viên khác/lớp khác.
+- Các ảnh trace/prompt phải lấy từ project Langfuse cá nhân `day13-k4-l3b-<MSSV>`; ảnh nên nhìn thấy tên project nhưng tuyệt đối không mở/chụp trang API Keys.
+
+Phân biệt nguồn evidence:
+
+- `04`, `05` và `13`: chụp structured log do ứng dụng tạo trong terminal hoặc `data/logs.jsonl`.
+- `06`–`10` và `14`: chụp traces/observations hoặc prompt versions trong project Langfuse cá nhân.
+- Không gọi ảnh trace Langfuse là “log”; dùng `correlation_id` để chứng minh log và trace thuộc cùng request.
 
 Từ `submission/REPORT.md`, dẫn ảnh như sau:
 
@@ -81,10 +88,10 @@ Tên file dưới đây là gợi ý; có thể dùng tên khác nếu `REPORT.m
 | Dashboard validator | Kết quả `validate_dashboard.py`, đủ 6/6 | `03-dashboard-validator.png` |
 | Structured log | Log JSON có timestamp, event, `correlation_id`, model, env, feature và latency | `04-structured-log.png` |
 | PII redaction | Input test chứa PII giả và log đầu ra đã che email/điện thoại/CCCD/thẻ | `05-pii-redaction.png` |
-| Trace list | Danh sách tối thiểu 10 traces do chính học viên tạo | `06-trace-list.png` |
+| Trace list | Tên project cá nhân và danh sách tối thiểu 10 traces do chính học viên tự chạy workload để tạo | `06-trace-list.png` |
 | Trace waterfall | Một trace có root observation, retrieval và generation theo đúng quan hệ cha-con | `07-trace-waterfall.png` |
 | Trace metadata | `correlation_id`, model, prompt name/version/label, token và cost; không có PII thô | `08-trace-metadata.png` |
-| Prompt versions | Prompt v1/v2 và các label `baseline`, `candidate`, `production` | `09-prompt-versions.png` |
+| Prompt versions | Trong project cá nhân: prompt v1/v2 và các label `baseline`, `candidate`, `production` | `09-prompt-versions.png` |
 | Prompt rollback | Trạng thái trước/sau khi promote hoặc rollback `production`; kèm trace ID của hai version trong report | `10-prompt-rollback.png` |
 | Dashboard runtime | Đủ 6 panel, có dữ liệu, time range, đơn vị và threshold/SLO line | `11-dashboard-overview.png` |
 | Incident metric | Metric bất thường và khoảng thời gian xảy ra challenge | `12-incident-metric.png` |
@@ -149,6 +156,7 @@ Nội dung phải do chính học viên thực hiện và khớp với source, e
 - PII nguyên văn trong log, trace, screenshot hoặc report.
 - `.venv/`, cache, dependency đã cài hoặc file sinh ra không phục vụ chấm.
 - Source, report, trace ID hoặc evidence của học viên/lớp khác.
+- Trace/prompt lấy từ project dùng chung hoặc project của người khác.
 - Evidence giả hoặc ảnh đã chỉnh sửa làm sai lệch kết quả.
 - `config/challenge.json` đã bị tự ý sửa.
 - Ảnh dashboard trống hoặc ảnh không đọc được thông tin cần chấm.
@@ -169,7 +177,8 @@ Checklist cuối:
 
 - [ ] Source và TODO bắt buộc đã hoàn thành bằng repository cá nhân.
 - [ ] Test, log validator và dashboard validator có evidence.
-- [ ] Có tối thiểu 10 traces, waterfall, metadata và prompt rollback.
+- [ ] Có tối thiểu 10 traces tự tạo trong project Langfuse cá nhân, waterfall, metadata và prompt rollback.
+- [ ] Ảnh Langfuse nhìn thấy tên project cá nhân nhưng không lộ API key/secret.
 - [ ] Dashboard đủ 6 panel; SLO/error budget và 3 alert/runbook đã hoàn thiện.
 - [ ] Incident evidence nối đúng metric → log → trace.
 - [ ] `submission/REPORT.md` đã điền đầy đủ.
