@@ -21,6 +21,20 @@ LANGFUSE_PROMPT_LABEL=production
 
 Nếu Langfuse không khả dụng, app dùng template local và trace metadata ghi `prompt_source=local` hoặc `local-fallback` thay vì giả vờ đã lấy được prompt managed.
 
+## Thao tác trên Langfuse UI
+
+Tên menu/nút trên Langfuse có thể thay đổi nhẹ theo phiên bản, nhưng luồng thao tác cần giữ như sau:
+
+1. Mở đúng project cá nhân `day13-k4-l3b-<MSSV>`.
+2. Vào khu vực quản lý prompt/prompt management.
+3. Tạo text prompt tên `day13-chat` với đủ ba biến `{{feature}}`, `{{docs}}`, `{{message}}`.
+4. Lưu version đầu tiên và gắn labels `baseline` + `production`.
+5. Tạo một version mới từ prompt đó, chỉnh nhẹ format hoặc độ dài câu trả lời, rồi gắn label `candidate`.
+6. Chạy workload với label tương ứng trong `.env`, sau đó mở trace để kiểm tra metadata `prompt_name`, `prompt_label`, `prompt_version`.
+7. Để promote, chuyển label `production` sang version mới. Để rollback, chuyển label `production` quay lại version cũ.
+
+Điểm quan trọng: app không cần sửa code khi đổi version. Code chỉ hỏi Langfuse theo `LANGFUSE_PROMPT_NAME` và `LANGFUSE_PROMPT_LABEL`; label `production` đang trỏ tới version nào thì Langfuse quyết định.
+
 ## Việc cần làm
 
 1. Tạo version 1, gắn labels `baseline` và `production`.

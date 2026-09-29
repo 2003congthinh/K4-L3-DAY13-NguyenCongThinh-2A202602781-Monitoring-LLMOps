@@ -70,6 +70,8 @@
 - **Cách tính error budget:**
 - **Ba alert và runbook tương ứng:**
 
+> Ví dụ cách viết error budget: "SLO 99.5% trong 28 ngày nghĩa là error budget 0.5%. Nếu workload có 10,000 request thì tối đa 50 request được phép lỗi hoặc chậm hơn ngưỡng SLO."
+
 ## 7. Điều tra challenge
 
 - **Challenge ID:**
@@ -80,6 +82,8 @@
 - **Root cause:**
 - **Fix action:**
 - **Preventive measure:**
+
+> Ví dụ cách viết ngắn: "Metric cho thấy latency P95 tăng trong 10:35-10:45. Log request `req-...` có `latency_ms` cao. Trace cùng `correlation_id` cho thấy span retrieval chậm, còn generation bình thường. Root cause là retrieval delay trong challenge. Fix action là tắt incident/khôi phục cấu hình retrieval; preventive measure là thêm alert retrieval success/latency và runbook kiểm tra trace retrieval trước."
 
 ## 8. Giải thích và tự đánh giá
 
