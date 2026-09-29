@@ -36,10 +36,10 @@ Validator kiểm tra cấu trúc contract; nó không thể chứng minh biểu 
 ## Cách kiểm tra runtime
 
 1. Lưu ảnh baseline và giá trị P95/error/cost hiện tại.
-2. Bật một incident practice, ví dụ `python scripts/inject_incident.py --scenario rag_slow`.
+2. Bật một incident practice, ví dụ `python scripts/inject_incident.py --scenario <practice_scenario>`.
 3. Chạy lại load test với cùng input và concurrency.
-4. Xác nhận panel liên quan thay đổi theo đúng hướng; với `rag_slow`, P95 phải tăng rõ ràng.
+4. Xác nhận panel liên quan thay đổi theo đúng hướng theo loại practice scenario đã chọn.
 5. Lọc log chậm, lấy correlation ID rồi mở trace có cùng ID.
-6. Tắt incident bằng `python scripts/inject_incident.py --scenario rag_slow --disable`.
+6. Tắt incident bằng `python scripts/inject_incident.py --scenario <practice_scenario> --disable`.
 
 Ảnh dashboard phải nhìn được tên panel, time range, đơn vị và threshold. Báo cáo phải dẫn lại trace ID hoặc log line dùng để giải thích thay đổi.

@@ -83,7 +83,7 @@
 - **Fix action:**
 - **Preventive measure:**
 
-> Ví dụ cách viết ngắn: "Metric cho thấy latency P95 tăng trong 10:35-10:45. Log request `req-...` có `latency_ms` cao. Trace cùng `correlation_id` cho thấy span retrieval chậm, còn generation bình thường. Root cause là retrieval delay trong challenge. Fix action là tắt incident/khôi phục cấu hình retrieval; preventive measure là thêm alert retrieval success/latency và runbook kiểm tra trace retrieval trước."
+> Gợi ý cách viết ngắn, không thay cho evidence thực tế: "Metric cho thấy `[latency/error/cost/quality]` bất thường trong `[khoảng thời gian]`. Log line `[event]` có `correlation_id=[...]` đại diện cho request bị ảnh hưởng. Trace cùng `correlation_id` cho thấy span `[retrieval/generation/prompt/tool]` có dấu hiệu `[chậm/lỗi/token tăng]`. Root cause là `[nguyên nhân suy ra từ evidence]`. Fix action là `[hành động khôi phục]`; preventive measure là `[alert/runbook/test/guardrail để ngăn tái diễn]`."
 
 ## 8. Giải thích và tự đánh giá
 

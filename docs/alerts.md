@@ -16,8 +16,8 @@ Ví dụ dưới đây minh họa mức độ cụ thể cần có. Học viên 
 - Ba bước kiểm tra đầu tiên:
   1. Mở dashboard latency để xác nhận P95/P99 và khoảng thời gian tăng.
   2. Lọc `data/logs.jsonl` trong khoảng đó, lấy một `correlation_id` có `latency_ms` cao.
-  3. Mở trace cùng `correlation_id` trên Langfuse, so sánh thời gian span retrieval và generation.
-- Mitigation tạm thời: nếu prompt version mới làm token tăng, rollback `production`; nếu retrieval chậm, tắt incident/practice scenario hoặc giảm concurrency khi demo.
+  3. Mở trace cùng `correlation_id` trên Langfuse, so sánh các span chính để xác định bước nào bất thường.
+- Mitigation tạm thời: dựa trên evidence thực tế để rollback prompt, khôi phục cấu hình liên quan, tắt practice scenario hoặc giảm tải khi demo.
 - Owner: `student-<MSSV>`
 
 ## Alert 1
