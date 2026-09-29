@@ -130,7 +130,7 @@ Root cause và hành động xử lý
 
 `REPORT.md` phải ghi challenge ID, khoảng thời gian, metric cụ thể, log line/`correlation_id`, trace ID, span gây ảnh hưởng, root cause, fix action và preventive measure.
 
-Không sửa, tự tạo hoặc lấy `config/challenge.json` từ lớp khác.
+`config/challenge.json` được Lab Coach gửi riêng tại CP3 và đã nằm trong `.gitignore`. Không sửa, tự tạo, force-add, commit, push, chia sẻ hoặc lấy file từ lớp khác.
 
 ## 8. Nội dung báo cáo cá nhân
 
@@ -158,7 +158,7 @@ Nội dung phải do chính học viên thực hiện và khớp với source, e
 - Source, report, trace ID hoặc evidence của học viên/lớp khác.
 - Trace/prompt lấy từ project dùng chung hoặc project của người khác.
 - Evidence giả hoặc ảnh đã chỉnh sửa làm sai lệch kết quả.
-- `config/challenge.json` đã bị tự ý sửa.
+- `config/challenge.json` hoặc nội dung challenge riêng bị commit/push/chia sẻ, hoặc file đã bị tự ý sửa.
 - Ảnh dashboard trống hoặc ảnh không đọc được thông tin cần chấm.
 
 ## 10. Kiểm tra trước khi push

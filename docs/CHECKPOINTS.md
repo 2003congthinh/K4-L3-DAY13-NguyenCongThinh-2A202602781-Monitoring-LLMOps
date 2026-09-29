@@ -85,7 +85,7 @@ API trả `ok: true`, log được tạo, trace xuất hiện trong đúng proje
 
 ### Cần làm
 
-Sau khi Lab Coach release file đúng lớp:
+Sau khi Lab Coach gửi riêng file đúng lớp, lưu file tại `config/challenge.json`. File đã được `.gitignore`; không force-add, commit, push hoặc chia sẻ file:
 
 ```powershell
 python scripts/inject_incident.py
@@ -100,7 +100,7 @@ python scripts/load_test.py --challenge --concurrency 5
 
 ### Cần hiểu
 
-Một kết luận incident chỉ hợp lệ khi metric, log và trace cùng chỉ về một nguyên nhân. Challenge ID, seed và query phải khớp repo L3B.
+Một kết luận incident chỉ hợp lệ khi metric, log và trace cùng chỉ về một nguyên nhân. Challenge ID, seed và query phải khớp file riêng do Lab Coach gửi cho L3B.
 
 ### Hoàn thành khi
 

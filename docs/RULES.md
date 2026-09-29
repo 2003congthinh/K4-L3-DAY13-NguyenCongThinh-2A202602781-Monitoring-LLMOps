@@ -23,8 +23,9 @@
 
 ## 4 Challenge chính thức
 
-- Chỉ chạy challenge sau khi Lab Coach release file cho đúng lớp.
-- Không tự tạo, sửa, thay thế hoặc cherry-pick `config/challenge.json` từ repo lớp khác.
+- Chỉ chạy challenge sau khi Lab Coach gửi riêng file cho đúng lớp tại CP3.
+- `config/challenge.json` đã được `.gitignore`: không force-add, commit, push hoặc chia sẻ file qua repository/kênh chung.
+- Không tự tạo, sửa, thay thế hoặc lấy `config/challenge.json` từ học viên/lớp khác.
 - Evidence phải ghi challenge ID và khớp query/seed của repo đã nộp.
 - Practice scenarios được phép chạy bất kỳ lúc nào.
 

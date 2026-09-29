@@ -125,7 +125,7 @@ Dashboard dùng `data/logs.jsonl` làm nguồn chuẩn và giữ đúng 6 panel 
 
 ### CP3 — Challenge chính thức
 
-Chỉ chạy khi Lab Coach thông báo mở challenge của K4-L3B:
+Chỉ chạy khi Lab Coach thông báo mở challenge của K4-L3B. Tại CP3, Lab Coach gửi riêng file đúng lớp; lưu file đó tại `config/challenge.json`. File này đã được `.gitignore` và **không được** force-add/commit/push:
 
 ```bash
 python scripts/inject_incident.py
@@ -139,7 +139,7 @@ python scripts/load_test.py --challenge --concurrency 5
 3. Tìm trace có cùng `correlation_id`, rồi so sánh các span.
 4. Ghi root cause, fix action và preventive measure vào `submission/REPORT.md`.
 
-Không sửa, thay thế hoặc lấy `config/challenge.json` từ lớp khác.
+Không tự tạo, sửa, chia sẻ hoặc lấy `config/challenge.json` từ lớp khác. Nếu chưa nhận file riêng, tiếp tục practice bằng tham số `--scenario`; không chạy challenge chính thức.
 
 ## Kiểm tra trước khi nộp
 
