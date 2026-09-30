@@ -3,13 +3,14 @@ from __future__ import annotations
 import os
 import time
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 
 from . import metrics
-from .mock_llm import FakeLLM
+from .mock_llm import FakeLLM, FakeResponse
 from .mock_rag import retrieve
 from .pii import hash_user_id, summarize_text
 from .prompt_management import resolve_prompt
-from .tracing import get_langfuse_client, observe, propagate_attributes, tracing_enabled
+from .tracing import get_client, get_langfuse_client, observe, propagate_attributes, tracing_enabled
 
 
 @dataclass
@@ -50,8 +51,10 @@ class LabAgent:
                 "correlation_id": correlation_id,
             },
         ):
+            # Chỉ ghi preview đã scrub của user message (không ghi raw text, user_id hay session_id).
+            langfuse_client.update_current_span(input=summarize_text(message))
             started = time.perf_counter()
-            docs = retrieve(message)
+            docs = self._retrieve(message)
             prompt = resolve_prompt(
                 langfuse_client,
                 feature=feature,
@@ -59,7 +62,13 @@ class LabAgent:
                 message=message,
                 enabled=tracing_enabled(),
             )
+            with propagate_attributes(prompt=prompt.managed_prompt):
+                response = self._generate(prompt.text)
+            quality_score = self._heuristic_quality(message, response.text, docs)
+            latency_ms = int((time.perf_counter() - started) * 1000)
+            cost_usd = self._estimate_cost(response.usage.input_tokens, response.usage.output_tokens)
             langfuse_client.update_current_span(
+                output=summarize_text(response.text),
                 metadata={
                     "doc_count": len(docs),
                     "query_preview": summarize_text(message),
@@ -71,13 +80,12 @@ class LabAgent:
                 },
                 version=prompt.version,
             )
-            # TODO (CP2): instrument retrieve() and FakeLLM.generate() as child
-            # observations. The nested generation must receive prompt, usage and cost.
-            with propagate_attributes(prompt=prompt.managed_prompt):
-                response = self.llm.generate(prompt.text)
-            quality_score = self._heuristic_quality(message, response.text, docs)
-            latency_ms = int((time.perf_counter() - started) * 1000)
-            cost_usd = self._estimate_cost(response.usage.input_tokens, response.usage.output_tokens)
+            get_client().score_current_trace(
+                name="quality_proxy",
+                value=quality_score,
+                data_type="NUMERIC",
+                comment="Heuristic quality proxy (docs found, answer length, keyword overlap)",
+            )
 
         metrics.record_request(
             latency_ms=latency_ms,
@@ -98,10 +106,46 @@ class LabAgent:
             quality_score=quality_score,
         )
 
-    def _estimate_cost(self, tokens_in: int, tokens_out: int) -> float:
+    @observe(name="retrieve-context", as_type="retriever", capture_input=False, capture_output=False)
+    def _retrieve(self, message: str) -> list[str]:
+        langfuse = get_client()
+        langfuse.update_current_span(input={"query_preview": summarize_text(message)})
+        docs = retrieve(message)
+        langfuse.update_current_span(
+            output={"documents": docs},
+            metadata={"doc_count": len(docs), "source": "mock-corpus"},
+        )
+        return docs
+
+    @observe(name="generate-response", as_type="generation", capture_input=False, capture_output=False)
+    def _generate(self, prompt_text: str) -> FakeResponse:
+        # Prompt đã được link qua propagate_attributes(prompt=...) ở run().
+        langfuse = get_client()
+        langfuse.update_current_generation(input=summarize_text(prompt_text), model=self.model)
+        started_at = datetime.now(timezone.utc)
+        response = self.llm.generate(prompt_text)
+        input_cost, output_cost = self._cost_breakdown(
+            response.usage.input_tokens, response.usage.output_tokens
+        )
+        langfuse.update_current_generation(
+            output=summarize_text(response.text),
+            model=response.model,
+            usage_details={
+                "input": response.usage.input_tokens,
+                "output": response.usage.output_tokens,
+            },
+            cost_details={"input": input_cost, "output": output_cost},
+            completion_start_time=started_at + timedelta(milliseconds=response.ttft_ms),
+        )
+        return response
+
+    def _cost_breakdown(self, tokens_in: int, tokens_out: int) -> tuple[float, float]:
         input_cost = (tokens_in / 1_000_000) * 3
         output_cost = (tokens_out / 1_000_000) * 15
-        return round(input_cost + output_cost, 6)
+        return input_cost, output_cost
+
+    def _estimate_cost(self, tokens_in: int, tokens_out: int) -> float:
+        return round(sum(self._cost_breakdown(tokens_in, tokens_out)), 6)
 
     def _heuristic_quality(self, question: str, answer: str, docs: list[str]) -> float:
         score = 0.5

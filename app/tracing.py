@@ -4,8 +4,10 @@ import os
 from contextlib import contextmanager
 from typing import Any
 
+from .pii import scrub_text
+
 try:
-    from langfuse import get_client, observe, propagate_attributes
+    from langfuse import Langfuse, get_client, observe, propagate_attributes
 
     LANGFUSE_SDK_AVAILABLE = True
 except ImportError:  # pragma: no cover - chỉ dùng khi chưa cài requirements
@@ -24,6 +26,12 @@ except ImportError:  # pragma: no cover - chỉ dùng khi chưa cài requirement
         def update_current_generation(self, **kwargs: Any) -> None:
             return None
 
+        def score_current_trace(self, **kwargs: Any) -> None:
+            return None
+
+        def flush(self) -> None:
+            return None
+
     def get_client():
         return _DummyClient()
 
@@ -40,3 +48,19 @@ def tracing_enabled() -> bool:
     return LANGFUSE_SDK_AVAILABLE and bool(
         os.getenv("LANGFUSE_PUBLIC_KEY") and os.getenv("LANGFUSE_SECRET_KEY")
     )
+
+
+def mask_pii(*, data: Any, **kwargs: Any) -> Any:
+    """Langfuse mask hook: scrub PII from every input/output/metadata value before export."""
+    if isinstance(data, str):
+        return scrub_text(data)
+    if isinstance(data, dict):
+        return {key: mask_pii(data=value) for key, value in data.items()}
+    if isinstance(data, (list, tuple)):
+        return [mask_pii(data=value) for value in data]
+    return data
+
+
+# Khởi tạo client một lần, trước mọi get_client()/@observe, để mask được áp dụng cho toàn bộ trace.
+if tracing_enabled():
+    Langfuse(mask=mask_pii)
