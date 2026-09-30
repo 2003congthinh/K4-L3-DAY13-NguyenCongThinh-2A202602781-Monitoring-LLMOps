@@ -8,7 +8,7 @@
 - **MSSV:** 2A202602781
 - **Lớp:** K4-L3B
 - **Repository URL:** https://github.com/2003congthinh/K4-L3-DAY13-NguyenCongThinh-2A202602781-Monitoring-LLMOps
-- **Commit SHA cuối:** ✍️ _TODO: điền SHA sau khi commit (`git log -1 --format=%H`)_
+- **Commit SHA cuối:** fdf9f5ce64635f3442f7f8344a63c0c1e21e5bc8
 - **Challenge ID:** `day13-k4-l3b-monitoring-llmops-v1` (cohort K4)
 - **Tên project Langfuse cá nhân:** `day13-k4-l3b-2A202602781` (Langfuse Cloud US — `us.cloud.langfuse.com`)
 
