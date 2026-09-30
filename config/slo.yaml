@@ -7,7 +7,24 @@ primary_slo:
     total_event: 'event == "request_received"'
   target_percent: 99.5
   error_budget_percent: 0.5
-  note: Học viên phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình. Ví dụ nếu có 10,000 request trong cửa sổ 28 ngày, error budget 0.5% nghĩa là tối đa 50 request được phép không đạt SLO.
+  note: >-
+    Giữ ngưỡng 3000ms / 99.5%. Baseline 2026-09-30 (35 request, data/logs.jsonl):
+    P50 153ms, P95 1936ms, P99 2827ms, 0 lỗi, 0 request vượt 3000ms. Request thường
+    mất 150–450ms; P95 bị kéo lên bởi 3 request cold-start (lần đầu fetch prompt từ
+    Langfuse, ~2s) nên 3000ms vẫn còn ~1s headroom cho cold start mà không báo động giả,
+    đồng thời đủ chặt để bắt retrieval chậm (+2.5s) khi xảy ra sự cố.
+    Error budget 0.5%: với 10,000 request trong 28 ngày, tối đa 50 request được phép
+    lỗi hoặc chậm hơn 3000ms; request_failed cũng tính là bad event vì không có response_sent.
+baseline:
+  measured_at: '2026-09-30'
+  requests: 35
+  latency_p50_ms: 153
+  latency_p95_ms: 1936
+  latency_p99_ms: 2827
+  ttft_p95_ms: 50
+  error_rate_pct: 0
+  avg_cost_usd: 0.002109
+  quality_score_avg: 0.874
 guardrails:
   error_rate_pct_max: 2
   daily_cost_usd_max: 2.5
